@@ -5,9 +5,10 @@ import java.util.ArrayList;
 import com.project.dao.OrderDetailsDao;
 import com.project.dto.OrderDetailsDto;
 
-public class OrderDetailsTest {
+public class OrderDetailsDtoTest {
 
 	public static void main(String[] args) {
+//		select
 //		OrderDetailsDao dao = new OrderDetailsDao();
 //		ArrayList<OrderDetailsDto> dtos = dao.select();
 //		for(OrderDetailsDto dto:dtos) {
