@@ -23,7 +23,7 @@ public class OrderDetailsResponseTest {
 		Request request = new Request();
 		
 		switch(select) {
-		case 0:;
+		case 0:
 			ode = new OrderDetailsInsert();
 			break;
 		case 1:
