@@ -26,6 +26,7 @@ public class OrderDetailsDao {
 		String sql = "update Order_Details set productID=%d where orderID=%d";
 		sql = String.format(sql, productID,orderID);
 		returnValue = DBconn.statementUpdate(sql);
+		DBconn.dbClose();
 		return returnValue;
 	}
 	public int delete(int orderID) {
@@ -34,6 +35,7 @@ public class OrderDetailsDao {
 		String sql = "delete Order_Details where orderID=%d";
 		sql = String.format(sql, orderID);
 		returnValue = DBconn.statementUpdate(sql);
+		DBconn.dbClose();
 		return returnValue;
 	}
 	public ArrayList<OrderDetailsDto> select(){
@@ -49,6 +51,7 @@ public class OrderDetailsDao {
 				dto.setUnitPrice(rs.getDouble("unitPrice"));
 				dto.setQuantity(rs.getInt("quantity"));
 				dto.setDiscount(rs.getDouble("discount"));
+				dtos.add(dto);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
