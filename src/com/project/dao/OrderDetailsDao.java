@@ -20,11 +20,11 @@ public class OrderDetailsDao {
 		DBconn.dbClose();
 		return returnValue;
 	}
-	public int update(int productID,int orderID) {
+	public int update(int quantity,int productID,int orderID) {
 		int returnValue = 0;
 		DBconn.getInstance();
-		String sql = "update Order_Details set productID=%d where orderID=%d";
-		sql = String.format(sql, productID,orderID);
+		String sql = "update Order_Details set quantity=%d where orderID=%d and productID=%d";
+		sql = String.format(sql,quantity,orderID,productID);
 		returnValue = DBconn.statementUpdate(sql);
 		DBconn.dbClose();
 		return returnValue;

@@ -9,6 +9,4 @@ public interface OrderDetailsExecute {
 	public void inputView(Request request,Response response);
 	public void logic(Request request,Response response);
 	public void outputView(Request request,Response response);
-
-
 }

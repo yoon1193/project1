@@ -11,7 +11,6 @@ import com.project.util.Request;
 import com.project.util.Response;
 
 
-
 public class OrderDetailsResponseTest {
 
 	public static void main(String[] args) {
@@ -21,7 +20,6 @@ public class OrderDetailsResponseTest {
 		OrderDetailsExecute ode = null;
 		Response response = new Response();
 		Request request = new Request();
-		
 		switch(select) {
 		case 0:
 			ode = new OrderDetailsInsert();

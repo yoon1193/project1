@@ -46,7 +46,7 @@ public class OrderDetailsDelete implements OrderDetailsExecute {
 	@Override
 	public void outputView(Request request, Response response) {
 		OrderDetailsDto req = request.getOrderDetailsDto();
-		System.out.println("OrderID:" +req.getOrderID()+"를"+response.getResultValue()+"개 삭제하였습니다.");
+		System.out.println("OrderID: " +req.getOrderID()+"를"+response.getResultValue()+"개 삭제하였습니다.");
 
 	}
 

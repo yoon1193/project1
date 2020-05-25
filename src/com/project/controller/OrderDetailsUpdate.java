@@ -32,9 +32,12 @@ public class OrderDetailsUpdate implements OrderDetailsExecute {
 		int orderID = DBconn.inputInt();
 		System.out.println("ProductID를 입력하세요.");
 		int productID = DBconn.inputInt();
+		System.out.println("변경할 Quantity를 입력하세요.");
+		int quantity = DBconn.inputInt();
 		OrderDetailsDto dto = new OrderDetailsDto();
 		dto.setOrderID(orderID);
 		dto.setProductID(productID);
+		dto.setQuantity(quantity);
 		request.setOrderDetailsDto(dto);
 		
 	}
@@ -43,7 +46,7 @@ public class OrderDetailsUpdate implements OrderDetailsExecute {
 	public void logic(Request request, Response response) {
 		OrderDetailsDto dto = request.getOrderDetailsDto();
 		OrderDetailsDao dao = new OrderDetailsDao();
-		int i = dao.insert(dto);
+		int i = dao.update(dto.getQuantity(),dto.getProductID(),dto.getOrderID());
 		response.setResultValue(i);
 
 
@@ -51,8 +54,9 @@ public class OrderDetailsUpdate implements OrderDetailsExecute {
 
 	@Override
 	public void outputView(Request request, Response response) {
-		System.out.println(request.getOrderDetailsDto().getOrderID()
-				+" OrderID의 ProductID를 "+request.getOrderDetailsDto().getProductID()
+		System.out.println("\""+request.getOrderDetailsDto().getOrderID()+"\""
+				+" OrderID의 주문 중 "+"\""+request.getOrderDetailsDto().getProductID()+"\""+"번 ProductID의 수량을 "+
+				request.getOrderDetailsDto().getQuantity()
 				+"로 "+response.getResultValue()+"개 변경되었습니다.");
 
 	}
